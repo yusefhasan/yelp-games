@@ -1,0 +1,78 @@
+<%-  include("partials/header")  %>
+
+<div class="container">
+	<h1>add agame</h1>
+<form action="/games/<%=Games._id %>?_method=PUT"  method="POST">
+  <div class="mb-3">
+    <label for="title" class="form-label"     >title</label>
+    <input type="text" class="form-control" name="title" value="<%=Games.title %>">
+    
+  </div>
+  
+	<div class="mb-3">
+    <label for="description" class="form-label" >description</label>
+    <input type="text" class="form-control" name="description" value="<%=Games.description %>" >
+    
+  </div>
+ 
+	<div class="mb-3">
+    <label for="creater" class="form-label" autofocus>creater</label>
+    <input type="text" class="form-control" name="creater" value="<%=Games.creater %>">
+    
+  </div>
+	
+	
+	<div class="mb-3">
+    <label for="puplisher" class="form-label" autofocus>puplisher</label>
+    <input type="text" class="form-control" name="puplisher" value="<%=Games.puplisher %>" >
+    
+  </div>
+	
+	<div class="mb-3">
+    <label for="date" class="form-label" autofocus>date</label>
+    <input type="date" class="form-control" name="date" value="<%=Games.date.toISOString().split("T")[0] %>" ><!--this is how we change date format!-->
+    
+    </div>
+	
+	<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="price" name="price" <%= Games.price ? "checked": ' '   %> >
+  <label class="form-check-label" for="price">
+   free
+  </label>
+</div>
+	<br/>
+	
+	<div class="mb-3">
+    <label for="rating" class="form-label" >rating</label>
+    <input type="number" class="form-control" name="rating"  value="<%=Games.rating %>">
+    
+  </div>
+	
+	
+	<div class="mb-3">
+    <label for="type" class="form-label" >type</label>
+    <select  class="form-control" name="type"  id="type" >
+	<option disabled >choose below</option>
+		 <%  if (Games.type==='strategy') {%>  <option selected >strategy</option> <%} else{%><option >strategy</option><%}%>
+		 <%  if (Games.type==='action') {%>  <option selected>action</option> <%} else{%><option >action</option><%}%>
+		 <%  if (Games.type==='RPG') {%>  <option selected>RPG</option> <%} else{%><option >RPG</option><%}%>
+		 <%  if (Games.type==='FPS') {%>  <option  selected>FPS</option> <%} else{%><option >FPS</option><%}%>
+		 <%  if (Games.type==='Horror') {%>  <option selected>Horror</option> <%} else{%><option >Horror</option><%}%>
+
+	
+		</select>  </div>
+	
+ <div class="mb-3">
+    <label for="image" class="form-label"  >image url </label>
+    <input type="text" class="form-control" name="image" value="<%=Games.image%>">
+    
+  </div>
+	 
+	
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	
+	
+  
+</div>
+			<%- include("partials/footer")  %>

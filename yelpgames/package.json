@@ -1,0 +1,29 @@
+{
+  "name": "yelpgames",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "my games lists "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "bootstrap": "^5.2.1",
+    "ejs": "^3.1.8",
+    "ejs-html": "^5.1.5",
+    "es6-promise": "^4.2.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "git": "^0.1.5",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.6.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2",
+    "view-engine": "^1.1.1"
+  }
+}

@@ -1,0 +1,20 @@
+<%-  include("partials/header")  %>
+
+<div class="container"> <h1>add anew comment </h1>
+
+<form action="/games/<%= Games._id %>/comments/<%=Comments._id%>?_method=PUT" method="POST">
+	
+	<div class="form-group">
+		<label for="text">comment text </label>
+        <textarea class="form-control" name="text" id ="text" rows="8" cols="81" placeholder="comment text is here ...">
+<%=  Comments.text  %>
+</textarea>
+	
+				  </div>
+	<button type="submit" class="btn btn-primary">
+		submit comment 
+	</button>
+</form>
+</div>
+
+<%- include("partials/footer")  %>

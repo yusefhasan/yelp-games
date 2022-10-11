@@ -1,0 +1,102 @@
+<%-  include("partials/header")  %>
+
+<div class="container">
+	<h1>add agame</h1>
+<form action="/games"  method="POST">
+  <div class="mb-3">
+    <label for="title" class="form-label" autofocus>title</label>
+    <input type="text" class="form-control" name="title" >
+    
+  </div>
+  
+	<div class="mb-3">
+    <label for="description" class="form-label" >description</label>
+    <input type="text" class="form-control" name="description"  >
+    
+  </div>
+ 
+	<div class="mb-3">
+    <label for="creater" class="form-label" autofocus>creater</label>
+    <input type="text" class="form-control" name="creater" >
+    
+  </div>
+	
+	
+	<div class="mb-3">
+    <label for="puplisher" class="form-label" autofocus>puplisher</label>
+    <input type="text" class="form-control" name="puplisher" >
+    
+  </div>
+	
+	<div class="mb-3">
+    <label for="date" class="form-label" autofocus>date</label>
+    <input type="date" class="form-control" name="date" >
+    
+    </div>
+	
+	<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="price" name="price">
+  <label class="form-check-label" for="price">
+   free
+  </label>
+</div>
+	<br/>
+	
+	<div class="mb-3">
+    <label for="rating" class="form-label" autofocus>rating</label>
+    <input type="number" class="form-control" name="rating"  >
+    
+  </div>
+	
+	
+	<div class="mb-3">
+    <label for="type" class="form-label" >type</label>
+    <select  class="form-control" name="type"  id="type">
+	<option disabled selected>choose below</option>
+	
+	<option >strategy</option>
+	<option>action</option>
+	<option>RPG</option>
+	<option>FPS</option>
+	<option>Horror</option>
+
+		</select>
+  </div>
+	
+ <div class="mb-3">
+    <label for="image" class="form-label" >image url </label>
+    <input type="text" class="form-control" name="image" >
+    
+  </div>
+	 
+	
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	
+	
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer")  %>

@@ -1,0 +1,102 @@
+          <%-  include("partials/header")  %>
+ 
+
+         <div class="container">
+			 <div class="row mt-4">
+				 <div class="col-6 show-image-container">
+					<img src="<%=games.image%>">
+				 </div>
+				 <div class="col-6 detial-container">
+					 <h1><%= games.title %></h1>
+					 <p><%= games.description %></p>
+                     <table class="table">
+  
+  <tbody>
+    <tr>
+      <th scope="row">creater</th>
+      <td><%=games.creater %></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">puplisher</th>
+      <td><%=games.puplisher%></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><%=games.date%></td>
+      
+    </tr>
+	  <tr>
+      <th scope="row">type</th>
+           <td><%=games.type%></td>
+      
+    </tr>
+	  
+	  <tr>
+      <th scope="row">price</th>
+      <td><%=games.price%></td>
+      
+    </tr>
+	  
+	  <tr>
+      <th scope="row">rating</th>
+      <td><%=games.rating%></td>
+      
+    </tr>
+    </tbody>
+    </table>
+	<a href="/games/<%=	games._id%>/edit">
+	   <button  class="btn btn-outline-info btn-block mb-2"> Edit			</button>
+	   </a>
+	<form action="/games/<%=games._id%>/?_method=DELETE" method="POST">
+		<button type="submit"  class="btn btn-outline-danger btn-block mb-2"  > Delete</button>
+					 </form>				 
+
+              </div>
+				 <div class="container  ">
+					 
+    <div class=" comment-header col-md-8 mb-3 ">
+	  Comment Header</div>
+					<a href="/games/<%=games._id%>/comments/new"   >
+						<button class="btn btn-success  btn-lg  mb-4">Add a comment  </button>
+                     </a> 
+					 
+				 <%	Comments.forEach((Comments=>{ %>
+    <div class="row comment-container py-2 align-items-start  border">
+     <div class="col-2 ">
+		              <%= Comments.user.username %>
+		</div>
+		
+		<div class=" col-2   border-right border-left">  
+			<a  class="btn btn-sm  btn-success  w-75 p-0 my-1 " href="/games/<%=games._id%>/comments/<%=Comments._id %>/Edit"  > Edit</a>	
+			<form class="w-75 my-1" action="/games/<%=games._id%>/comments/<%=Comments._id%>?_method=DELETE"  method="POST"   >
+				<button class="btn btn-danger btn-sm w-100 p-0 "> delete</button>
+				
+			</form>
+		</div>	
+		<div class=" col my-auto">
+					 <%= Comments.text %>
+		</div>
+		
+				 </div>
+				 	<% }))%>
+<div class="py-5"></div>
+				 </div>
+                      				 </div>
+  
+            
+
+     
+
+
+
+
+
+
+
+
+
+
+
+			<%- include("partials/footer")  %>
